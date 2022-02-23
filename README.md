@@ -10,3 +10,9 @@ Using Google Cloud APIs is a pain if you are not a developer. Make it easer for 
 - GCloud Text Detection 
 - Document Manager
 - Credit System
+
+## Mocks
+
+![Dashboard](./docs/My-Stuff.png)
+![New Job](./docs/New-Job.png)
+![View Job](./docs/My-Doc.png)
