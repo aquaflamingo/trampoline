@@ -1,0 +1,14 @@
+<div class="row">
+  <% if jobs.any? %>
+    <% jobs.in_groups_of(4).each do |jgroup| %>
+      <div class="row">
+        <% jgroup.compact.each do |j| %>
+          <div>
+            <%= render partial: "/jobs/card", locals: { job: j } %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <%= link_to "Create new job", new_job_path %>
+  <% end %>
+</div>
