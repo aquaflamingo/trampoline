@@ -120,6 +120,9 @@ GEM
     mini_portile2 (2.8.0)
     minitest (5.15.0)
     msgpack (1.4.5)
+    mutations (0.9.1)
+      activesupport
+    mutations_generator (0.3.1)
     net-imap (0.2.3)
       digest
       net-protocol
@@ -231,6 +234,8 @@ DEPENDENCIES
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
+  mutations (~> 0.9.1)
+  mutations_generator (~> 0.3.1)
   pry
   puma (~> 5.0)
   rails (~> 7.0.1)
