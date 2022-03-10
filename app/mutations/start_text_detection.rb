@@ -8,16 +8,24 @@ class StartTextDetection < Mutations::Command
   end 
 
   def execute
-    res = @vision_client.detect_text(job.upload.url)
+    raw_res = @vision_client.detect_text(job.upload.url)
+    parsed_response = @gpt3.interpret(raw_res)
+
+    result = parsed_response['choices'].map{|c| c['text']}.join('')
 
     Run.create!(
       job: job,
-      resolved_text: res.text
+      raw: raw_res.text,
+      resolved_text: result
     )
   end
 
   private
   def vision_client
     GoogleCloudVisionClient.instance
+  end
+
+  def gpt3
+    OpenAiClient.instance
   end
 end
