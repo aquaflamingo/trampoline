@@ -4,7 +4,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: './entrypoint.sh'
     ports:
       - "3000:3000"
     volumes:

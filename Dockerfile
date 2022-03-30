@@ -4,11 +4,13 @@ FROM ruby:3.1.1-alpine3.15
 RUN apk update -qq && apk upgrade
 
 # Install Deps
+# TODO: pg 
+# postgresql-dev \
+# postgresql-client \
 RUN apk add --no-cache \
 	 # Necesssary
 	 build-base \
-	 postgresql-dev \
-   postgresql-client \
+	 sqlite sqlite-dev \
 	 nodejs yarn tzdata \
 	 vim bash
 
