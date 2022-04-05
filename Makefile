@@ -10,13 +10,13 @@ up:
 	@bundle exec rails server -p 3000 
 
 docker.build:
-	@docker-compose -p "$(APP_NAME)" build .
+	@docker-compose -p "$(PROJECT)" build .
 
 docker.start:
-	@docker-compose -p "$(APP_NAME)" up 
+	@docker-compose -p "$(PROJECT)" up 
 
 docker.stop: 
-	@docker-compose -p "$(APP_NAME)" down
+	@docker-compose -p "$(PROJECT)" down
 
 docker.clean:
-	@docker-compose -p "$(APP_NAME)" down -v --rmi local --remove-orphans
+	@docker-compose -p "$(PROJECT)" down -v --rmi local --remove-orphans

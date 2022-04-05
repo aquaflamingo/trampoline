@@ -12,7 +12,9 @@ RUN apk add --no-cache \
 	 build-base \
 	 sqlite sqlite-dev \
 	 nodejs yarn tzdata \
-	 vim bash
+		 # For M1 compat
+		 gcompat \
+		 vim bash
 
 RUN gem install bundler --version '~> 2.2.31'
 
