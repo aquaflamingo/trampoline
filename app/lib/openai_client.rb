@@ -21,7 +21,7 @@ class OpenAIClient
   private 
   def autocorrect_prompt(corpus)
   <<-EOM
-Perform grammer, spelling and autocorrection to the following text passage:
+Perform grammer, spelling and auto-correct to the following text passage:
 
 #{corpus}
   EOM
