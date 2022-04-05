@@ -4,12 +4,13 @@
 <!-- split -->
 <div>
   <div> 
-    <!-- upload -->
+    <!-- Uploaded image -->
+    <%= image_tag @job.upload %>
   </div>
   <div> 
     <div> 
       <h2>Text Detected</h2>
-      <!-- content -->
+      <%= @job.run.resolved_text %>
     </div>
     <div>
       <!-- feedback -->
