@@ -10,7 +10,7 @@ up:
 	@bundle exec rails server -p 3000 
 
 docker.build:
-	@docker-compose -p "$(PROJECT)" build .
+	@docker-compose -p "$(PROJECT)" build
 
 docker.start:
 	@docker-compose -p "$(PROJECT)" up 

@@ -4,15 +4,16 @@
 <!-- split -->
 <div>
   <div> 
-    <!-- upload -->
+    <!-- Uploaded image -->
+    <%= image_tag @job.upload %>
   </div>
   <div> 
     <div> 
       <h2>Text Detected</h2>
-      <!-- content -->
+      <%= @job.run&.resolved_text.present? ? @job.run.resolved_text : "No resolved result" %>
     </div>
     <div>
-      <!-- feedback -->
+      <!-- TODO: feedback -->
     </div>
   </div>
 </div>
