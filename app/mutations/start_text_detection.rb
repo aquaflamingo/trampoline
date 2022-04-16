@@ -16,7 +16,8 @@ class StartTextDetection < Mutations::Command
     Run.create!(
       job: job,
       raw: raw_res.text,
-      resolved_text: result
+      resolved_text: result,
+      completed_at: Time.utc
     )
   end
 
