@@ -2,18 +2,29 @@
 <p> <%= @job.description %> </h2>
 
 <!-- split -->
-<div>
-  <div> 
+<div class="row">
+  <div class="col-md-6"> 
     <!-- Uploaded image -->
-    <%= image_tag @job.upload %>
+    <%= image_tag(@job.upload, class: 'img-fluid')%>
   </div>
-  <div> 
+  <div class="col-md-6"> 
     <div> 
       <h2>Text Detected</h2>
+      <!-- TODO: has text -->
       <%= @job.run&.resolved_text.present? ? @job.run.resolved_text : "No resolved result" %>
     </div>
-    <div>
-      <!-- TODO: feedback -->
+
+    <-- Result Navigation -->
+    <div class="row">
+      <div class="col-md-6">
+        <%= button_to "Save", action: "download", remote: true %>
+      </div>
+
+      <div class="col-md-6">
+        Feedback 
+        <%= button_to "Negative" %>
+        <%= button_to "Positive" %>
+      </div>
     </div>
   </div>
 </div>
