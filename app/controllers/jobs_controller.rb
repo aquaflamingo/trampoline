@@ -13,7 +13,7 @@ class JobsController < ApplicationController
     dl = compose_job_download(@job)
 
     # FIXME:
-    send_data(dl[:data], filename: dl[:filename], disposition: 'attachment') }
+    send_data(dl[:data], filename: dl[:filename], disposition: 'attachment')
   end
 
   def show; end
