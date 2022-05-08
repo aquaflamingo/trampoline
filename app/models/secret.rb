@@ -1,4 +1,6 @@
 class Secret < ApplicationRecord
+  encrypts :blob
+
   belongs_to :profile
 
   enum vendors: {
