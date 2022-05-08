@@ -15,10 +15,12 @@
         <%= @job.run&.resolved_text.present? ? @job.run.resolved_text : "No resolved result" %>
       </div>
 
-      <-- Result Navigation -->
-      <div class="row">
+      <div class="row mt-3">
         <div class="col-md-6">
-          <%= link_to "Save", download_job_path(@job), remote: true %>
+          <%= link_to "Save Results", 
+            download_job_path(@job), 
+            remote: true %>
+          </div> 
         </div>
       </div>
     </div>
