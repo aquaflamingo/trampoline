@@ -18,13 +18,7 @@
       <-- Result Navigation -->
       <div class="row">
         <div class="col-md-6">
-          <%= button_to "Save", action: "download", remote: true %>
-        </div>
-
-        <div class="col-md-6">
-          Feedback 
-          <%= button_to "Negative" %>
-          <%= button_to "Positive" %>
+          <%= link_to "Save", download_job_path(@job), remote: true %>
         </div>
       </div>
     </div>
