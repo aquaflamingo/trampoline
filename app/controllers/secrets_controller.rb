@@ -23,6 +23,7 @@ class SecretsController < ApplicationController
 
   def destroy
     @secret.destroy!
+
     redirect_to secrets_path, success: "Secret #{@secret.name} was removed"
   end
 
