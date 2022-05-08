@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="container mx-auto">
+    <%= link_to Rails.configuration.application_name, root_path, class: "navbar-brand text-primary" %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" i="navbarMain">
+      <ul class="navbar-nav me-auto mt-2 mt-md-0">
+      </ul>
+
+      <ul class="navbar-nav">
+        <% if signed_in? %>
+          <li class="nav-item dropdown">
+            <%= link_to "#", id: "navbar-dropdown", class: "nav-link dropdown-toggle", data: { target: "nav-account-dropdown", bs_toggle: "dropdown" }, aria: { haspopup: true, expanded: false } do %>
+              You
+            <% end %>
+
+            <div id="nav-account-dropdown" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbar-dropdown">
+              <%= link_to "Settings", root_path, class: "dropdown-item" %>
+            </div>
+          </li>
+        <% else %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

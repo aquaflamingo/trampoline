@@ -11,12 +11,11 @@
   </head>
 
   <body>
-    <% flash.each do |n, m| %>
-      <div> 
-        <%= msg %>
-      </div>
-    <% end %>
+    <%= render partial: 'shared/navbar' %>
+    <%= render partial: 'shared/notices' %>
 
-    <%= yield %>
+    <div class="container mx-auto">
+      <%= yield %>
+    </div>
   </body>
 </html>

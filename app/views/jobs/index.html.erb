@@ -1,10 +1,12 @@
-<div class="row">
-  <h1>My stuff</h1>
-  <div class="content-feed">
-    <% if @jobs.empty? %>
-      <%= link_to "Create new job", new_job_path %>
-    <% else %>
-      <%= render partial: "/jobs/grid", locals: { jobs: @jobs } %>
-    <% end %>
+<div class="mt-3">
+  <div class="row">
+    <h1>My Docs</h1>
+    <div class="content-feed">
+      <% if @jobs.empty? %>
+        <%= link_to "Create new job", new_job_path %>
+      <% else %>
+        <%= render partial: "/jobs/grid", locals: { jobs: @jobs } %>
+      <% end %>
+    </div>
   </div>
 </div>

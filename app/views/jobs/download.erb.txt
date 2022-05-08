@@ -1,0 +1,4 @@
+job_name:<%= @payload.name %>
+job_description:<%= @payload.description %>
+---
+<%= @payload.text %>
