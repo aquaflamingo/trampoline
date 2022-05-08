@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  get 'secrets/new'
-  get 'secrets/index'
-  get 'secrets/create'
-  get 'secrets/destroy'
   # FIXME: Signed in / out
   root to: 'jobs#index'
+
+  resources :secrets
 
   resources :jobs do 
     member do 
