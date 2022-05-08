@@ -10,6 +10,15 @@ class Secret < ApplicationRecord
 
   validate :name_is_unique
 
+  def vendor_name
+    case
+    when self.openai?
+      "OpenAI"
+    when self.gcp?
+      "Google Cloud Platform"
+    end
+  end
+
   private
   def name_is_unique
     errors.add(:name, "Profile has secret with same name already") if profile.secrets.exists?(name: name)
