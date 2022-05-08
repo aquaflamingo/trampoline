@@ -19,6 +19,7 @@ gem 'google-cloud-vision'
 gem 'ruby-openai'
 gem "mutations", "~> 0.9.1"
 gem "bootstrap"
+gem 'lockbox'
 gem "sassc-rails"
 
 group :development, :test do

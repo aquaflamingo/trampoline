@@ -182,6 +182,7 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jwt (2.3.0)
+    lockbox (0.6.8)
     loofah (2.16.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -338,6 +339,7 @@ DEPENDENCIES
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
+  lockbox
   mutations (~> 0.9.1)
   mutations_generator (~> 0.3.1)
   pry
