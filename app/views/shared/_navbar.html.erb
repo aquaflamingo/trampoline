@@ -14,8 +14,12 @@
         <% if signed_in? %>
           <li class="nav-item dropdown">
             <%= link_to "#", id: "navbar-dropdown", class: "nav-link dropdown-toggle", data: { target: "nav-account-dropdown", bs_toggle: "dropdown" }, aria: { haspopup: true, expanded: false } do %>
-              You Test
+              You
             <% end %>
+
+            <div id="nav-account-dropdown" class="dropdown-menu dropdown-menu-end" aria-labelledby="navbar-dropdown">
+              <%= link_to "Settings", root_path, class: "dropdown-item" %>
+            </div>
           </li>
         <% else %>
         <% end %>
