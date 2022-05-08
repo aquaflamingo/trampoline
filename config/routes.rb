@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :jobs do 
     member do 
-      post :download
+      get :download
     end
   end
 end

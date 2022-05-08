@@ -12,7 +12,6 @@ class JobsController < ApplicationController
   def download
     dl = compose_job_download(@job)
 
-    # FIXME:
     send_data(dl[:data], filename: dl[:filename], disposition: 'attachment')
   end
 
