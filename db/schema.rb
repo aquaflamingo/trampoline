@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_16_012231) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_08_173415) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -46,6 +46,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_16_012231) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "profiles", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "runs", force: :cascade do |t|
     t.integer "job_id", null: false
     t.text "raw"
@@ -56,7 +62,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_16_012231) do
     t.index ["job_id"], name: "index_runs_on_job_id"
   end
 
+  create_table "secrets", force: :cascade do |t|
+    t.string "name"
+    t.integer "profile_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "vendor"
+    t.index ["profile_id"], name: "index_secrets_on_profile_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "runs", "jobs"
+  add_foreign_key "secrets", "profiles"
 end
