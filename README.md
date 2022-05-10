@@ -2,6 +2,9 @@
 
 Small web application over basic Google Cloud APIs.
 
+## License
+This repository is licensed under [MIT Open Source](https://opensource.org/licenses/MIT)
+
 ## Build
 1. Clone the repository
 2. Install dependencies `bundle install` 
