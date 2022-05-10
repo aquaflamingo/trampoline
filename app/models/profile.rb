@@ -2,10 +2,10 @@ class Profile < ApplicationRecord
   has_many :secrets
 
   def openai_credentials
-    # TODO
+    secrets.open_ai&.first
   end
 
   def gcp_credentials
-    # TODO
+    secrets.gcp&.first
   end
 end
