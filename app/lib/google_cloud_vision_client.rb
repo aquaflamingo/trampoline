@@ -1,6 +1,8 @@
-require 'ostruct' 
-require 'singleton' 
-require "google/cloud/vision"
+# frozen_string_literal: true
+
+require 'ostruct'
+require 'singleton'
+require 'google/cloud/vision'
 
 class GoogleCloudVisionClient
   def initialize(profile)
@@ -18,7 +20,7 @@ class GoogleCloudVisionClient
     # Iterate through response
     response.responses.map do |res|
       OpenStruct.new(
-        text: res.text_annotations.map { |t| t.descriptions }
+        text: res.text_annotations.map(&:descriptions)
       )
     end
   end

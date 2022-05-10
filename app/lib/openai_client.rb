@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class OpenAIClient
-  ENGINE_DAVINCI = 'text-davinci-001'.freeze
+  ENGINE_DAVINCI = 'text-davinci-001'
 
   def initialize(profile)
     OpenAI::Config.configure do |c|
@@ -21,13 +23,13 @@ class OpenAIClient
     response.parsed_response
   end
 
+  private
 
-  private 
   def autocorrect_prompt(corpus)
-  <<-EOM
-Perform grammer, spelling and auto-correct to the following text passage:
+    <<~EOM
+      Perform grammer, spelling and auto-correct to the following text passage:
 
-#{corpus}
-  EOM
+      #{corpus}
+    EOM
   end
 end

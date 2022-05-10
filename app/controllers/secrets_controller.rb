@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class SecretsController < ApplicationController
   before_action :set_secret, only: [:destroy]
 
@@ -14,7 +16,7 @@ class SecretsController < ApplicationController
 
     respond_to do |format|
       if @secret.save
-        format.html { redirect_to secrets_path, success: "Added" }
+        format.html { redirect_to secrets_path, success: 'Added' }
       else
         format.html { redirect_to new_secret_path, warning: @secret.errors.full_messages.first }
       end
@@ -28,11 +30,12 @@ class SecretsController < ApplicationController
   end
 
   private
+
   def secret_params
     params.require(:secret).permit(:name, :vendor, :blob)
   end
 
-  def set_secret 
+  def set_secret
     @secret = Secret.find(params[:id])
   end
 end
