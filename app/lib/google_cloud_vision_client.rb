@@ -1,10 +1,13 @@
 require 'ostruct' 
 require 'singleton' 
+require "google/cloud/vision"
 
 class GoogleCloudVisionClient
-  include Singleton
+  def initialize(profile)
+    Google::Cloud::Vision.configure do |c|
+      c.credentials = profile.gcp_credentials
+    end
 
-  def initialize
     @annotator_client = Google::Cloud::Vision.image_annotator
   end
 

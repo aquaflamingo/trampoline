@@ -1,7 +1,11 @@
 class OpenAIClient
   ENGINE_DAVINCI = 'text-davinci-001'.freeze
 
-  def initialize
+  def initialize(profile)
+    OpenAI::Config.configure do |c|
+      c.access_token = profile.openai_credentials
+    end
+
     @config ||= OpenAI.configuration
     @client = OpenAI::Client.new(access_token: @config.access_token)
   end
