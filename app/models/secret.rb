@@ -4,19 +4,28 @@ class Secret < ApplicationRecord
   belongs_to :profile
 
   enum vendors: {
-    openai: 0,
-    gcp: 1
+    open_ai: "open_ai",
+    gcp: "gcp"
   }
 
   validate :name_is_unique
 
-  def vendor_name
-    case
-    when self.openai?
-      "OpenAI"
-    when self.gcp?
-      "Google Cloud Platform"
+  module Vendor
+    OpenAI = "Open AI".freeze
+    GoogleCloudPlatform = "Google Cloud Platform".freeze
+
+    def self.decorated_name(val)
+      case val
+        when :open_ai
+          OpenAI
+        when :gcp
+          GoogleCloudPlatform
+      end
     end
+  end
+
+  def vendor_name
+    Vendor.decorated_name(self.vendor.to_sym)
   end
 
   private
