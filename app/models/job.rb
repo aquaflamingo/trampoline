@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Job < ApplicationRecord
   has_one_attached :upload
   has_one :run
@@ -27,7 +29,7 @@ class Job < ApplicationRecord
     end
 
     def result
-      erb_template_fp = Rails.root.join("app", "views", "jobs", "download.erb.txt")
+      erb_template_fp = Rails.root.join('app', 'views', 'jobs', 'download.erb.txt')
 
       erb = ERB.new(File.read(erb_template_fp))
 

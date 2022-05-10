@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class JobsController < ApplicationController
-  before_action :set_job, only: [:show, :download]
+  before_action :set_job, only: %i[show download]
 
   def index
     @jobs = Job.all
@@ -42,9 +44,9 @@ class JobsController < ApplicationController
   def compose_job_download(j)
     digest = Digest::MD5.hexdigest("#{j.title}_#{Time.now.to_i}")
 
-    { 
-      data: j.to_downloadable, 
+    {
+      data: j.to_downloadable,
       filename: "#{digest}_#{j.title}.txt"
-    } 
+    }
   end
 end

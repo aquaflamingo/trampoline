@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # FIXME: You will need to update your lockbox key via:
 #   1. bundle exec rails console
 #     a. Lockbox.generate_key

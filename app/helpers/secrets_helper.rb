@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SecretsHelper
   def pretty_vendors_list
     Secret.vendors.values.map do |v|
