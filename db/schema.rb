@@ -67,7 +67,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_08_175734) do
     t.integer "profile_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "vendor"
+    t.string "vendor"
     t.text "blob_ciphertext"
     t.index ["profile_id"], name: "index_secrets_on_profile_id"
   end
